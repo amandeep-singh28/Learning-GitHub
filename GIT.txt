@@ -45,6 +45,8 @@ unchanged
 Adds new or changed files in your working directory to the Git staging area
 
 git add<file name>
+git add .(For making all files as Staged)
+
 
 (vi)COMMIT
 It is the record of change
@@ -60,4 +62,27 @@ git push origin main
 ***The whole above process was related to, How to clone our GitHub repo to our local machine***
 
 ***Now if we want that, create a folder on our local machine and directly connect it with GitHub, Below is the working for it***
+
+(i)Firstly create a subfolder in your folder like localrepo.
+    cd ..
+    mkdir LocalRepo
+    cd LocalRepo
+(ii)Now we need to make this folder as our GitHub Repo. To check whether this is our Repo or not.
+    ls -force (You will not be able to see any .git file)
+(iii)Use git init, to initialize this subfolder as our GitHub repo.
+    git init
+(iv)Commit the changes(Thing to be noted is that, these changes are only maded permanent to our local system, now how to upload this folder on GitHub)
+(v)Go to GitHub, and create a new repo, don't add a new readme file because if we will add it than we need to import that readme file into our local machine too.
+(vi)We need to firstly create the origin using this command.
+    git remote add origin <link> (For the link, go to the repo which you have created, from there you can find it, Run the command on terminal)
+(vii)To verify it, run this command.
+    git remote -verify
+(viii)To check the branch name.
+    git branch(For good coding practice, we need to change the branch name MASTER -> MAIN, because in the default branch name on GitHub is "main")
+(ix)To change the branch name.
+    git branch -M main
+(x)Now we will push the folder to GitHub
+    git push origin main
+    git push - u origin main(If we will use this, than we don't need to type origin main again and again, we can directly type "git push")
+(xi)After doing all of the operations, you can now add README.md file.
 
