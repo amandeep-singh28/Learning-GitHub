@@ -112,3 +112,42 @@ git push origin main
 
 (v)To delete branch
     git branch -d <branch name>
+
+
+***Working***
+(i)Firstly check your branch status using "git branch".
+(ii)Now create a new branch using "git checkout -b feature1".
+(iii)If you will check the status, you will be in "feature1" branch.
+(iv)Go to "main" branch using "git checkout main".
+(v)Go to "feature1" branch using "git checkout feature1".
+(vi)Create a third branch using "git checkout -b feature2".
+(vii)Now you are in "feature2" branch, if you want to delete "feature2" branch you will not be able to delete it.
+(viii)Go to main branch using "git checkout main".
+(ix)Delete the "feature2" branch using "git branch -d feature2".
+(x)Go to your feature1 branch using "git checkout feature1". Now whatever changes you will do in this branch will remain in this branch only.
+(xi)file1.ipynb -> "This is a new Hello". Now commit the changes.
+(xii)Now your main branch has this code "Hello" and feature1 branch "This is a new Hello". Currently you are in your "feature1" branch. If you will switch back to your "main" branch you will observe that the second cell has disappeared(That's how branching works).
+(xiii)Now to make this changes to GitHub use this code "git push origin feature1" we want to push the "feature1" changes to our GitHub not the "main branch" changes.
+(xiv)Go to your GitHub repo you will see that it is showing something like "Compare & pull request" and if you will see the branch, it will 2 branches there "main" and "feature1".
+
+***MERGING BRANCH CONCEPT***
+After making the whole project, now if you want to merge the newly created branches with you "main" branch, there are two ways using: (i)Using CLI (ii)Using PR(Pull Request)
+
+(i)Using CLI
+->To compare commits, branches, files & more
+    git diff <branch name>
+
+->To merge 2 branches
+    git merge <branch name>
+
+(ii)Pull Request
+It lets you tell others about changes you have pushed to a branch in a repository on GitHub.
+
+***Steps Continued***
+(i)Go to your GitHub, you will see "Compare Pull & Request". Click onto that -> Create Pull Request -> Merge Pull Request -> Confirm Merge.
+(ii)You would see that the changes that you have on the "feature1" branch would also be reflected on your "main" branch(Only on GitHub).
+(iii)You would not be able to see the changes on your local machine. To sort this out do this.
+(iv)Whenever we want to show the changes from remote machine to our local machine, we make use of "PULL COMMAND"
+    It is used to fetch and download content from a remote repo and immediately update the local repo to match that content.
+(v)Type this command "git pull origin main".
+
